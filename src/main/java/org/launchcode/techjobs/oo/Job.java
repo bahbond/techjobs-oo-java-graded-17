@@ -61,7 +61,7 @@ public class  Job {
         this.name = name;
     }
 
-    public String getEmployer() {
+    public Employer getEmployer() {
         return employer;
     }
 

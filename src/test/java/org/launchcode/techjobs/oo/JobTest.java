@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 import org.junit.Test;
+import org.testng.AssertJUnit;
+
 import static org.junit.Assert.assertTrue;
 import static org.testng.AssertJUnit.*;
 
@@ -16,6 +18,11 @@ public class JobTest {
         Job test3 = new Job("Product Tester", new Employer("ACME"),new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertEquals(test3.getName(),"Product Tester");
+        assertTrue(test3.getEmployer() instanceof Employer);
+       assertTrue(test3.getLocation() instanceof Location);
+       assertTrue(test3.getPositionType() instanceof PositionType);
+       assertTrue(test3.getCoreCompetency() instanceof CoreCompetency);
+
 }
 
 
