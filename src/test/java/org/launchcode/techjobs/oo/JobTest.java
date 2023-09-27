@@ -68,5 +68,39 @@ public class JobTest {
         boolean condition = test8.equals(test9);
         assertFalse("do Id's match",condition);
     }
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        String newLine = System.lineSeparator();
+        Job stringTest = new Job("Mower", new Employer("Cardinals"), new Location("Saint Louis"), new PositionType("Full Time"),
+                new CoreCompetency("Turf"));
+
+        String toStringExpected = newLine +
+                "ID: " + stringTest.getId() + newLine +
+                "Name: " + stringTest.getName() + newLine +
+                "Employer: " + stringTest.getEmployer() + newLine +
+                "Location: " + stringTest.getLocation() + newLine +
+                "Position Type: " + stringTest.getPositionType() + newLine +
+                "Core Competency: " + stringTest.getCoreCompetency() + newLine;
+        String toStringActual = stringTest.toString();
+        assertEquals("Test spaces before and after",toStringExpected,toStringActual);
+        System.out.println(stringTest);
+    }
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        String newLine = System.lineSeparator();
+        Job stringTest = new Job("Mower", new Employer("Cardinals"), new Location("Saint Louis"), new PositionType("Full Time"),
+                new CoreCompetency("Turf"));
+        String toStringExpected = newLine +
+                "ID: " + stringTest.getId() + newLine +
+                "Name: " + stringTest.getName() + newLine +
+                "Employer: " + stringTest.getEmployer() + newLine +
+                "Location: " + stringTest.getLocation() + newLine +
+                "Position Type: " + stringTest.getPositionType() + newLine +
+                "Core Competency: " + stringTest.getCoreCompetency() + newLine;
+        String toStringActual = String.valueOf(stringTest);
+        assertEquals("test fields and values",toStringExpected,toStringActual);
+    }
+
+
 }
 

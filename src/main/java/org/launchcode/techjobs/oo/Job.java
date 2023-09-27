@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Objects;
 
 public class  Job {
@@ -44,6 +46,21 @@ public class  Job {
     @Override
     public int hashCode() {
         return Objects.hash(getId());
+    }
+//TODO: Create custom toString
+
+    @Override
+    public String toString() {
+        String newLine = System.lineSeparator();
+        return   newLine +
+                "ID: " + getId() + newLine +
+                "Name: " + getName() + newLine +
+                "Employer: " + getEmployer() + newLine +
+                "Location: " + getLocation() + newLine +
+                "Position Type: " + getPositionType() + newLine +
+                "Core Competency: " + getCoreCompetency() +
+                newLine;
+
     }
 
 
