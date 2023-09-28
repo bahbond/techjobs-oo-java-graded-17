@@ -56,17 +56,17 @@ public class  Job {
         if(name == null || name.isEmpty()){
             name = dna;
         }
-        if( employer == null || employer.getValue().equals("")){
+        if( employer.getValue() == null || employer.getValue().equals("")){
             employer.setValue(dna);
         }
-        if(location == null || location.getValue() == ""){
+        if(location.getValue() == null || location.getValue() == ""){
             location.setValue(dna);
         }
-        if(positionType == null || positionType.getValue() == ""){
+        if(positionType.getValue() == null || positionType.getValue() == ""){
             positionType.setValue(dna);
         }
 
-            if(coreCompetency == null || coreCompetency.getValue()==""){
+            if(coreCompetency.getValue() == null || coreCompetency.getValue()==""){
 
               coreCompetency.setValue(dna);
           }

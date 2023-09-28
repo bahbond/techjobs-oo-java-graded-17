@@ -103,7 +103,7 @@ public class JobTest {
 @Test
     public void testToStringHandlesEmptyField(){
         String newLine = System.lineSeparator();
-    Job stringTest = new Job("", new Employer(""),new Location(""),new PositionType(""), new CoreCompetency(""));
+    Job stringTest = new Job(null, new Employer(),new Location(),new PositionType(""), new CoreCompetency(""));
     String toStringExpected = newLine +
             "ID: " + stringTest.getId() + newLine +
             "Name: " + "Data not available" + newLine +
@@ -113,7 +113,7 @@ public class JobTest {
             "Core Competency: " + "Data not available" + newLine;
     String toStringActual = String.valueOf(stringTest);
     assertEquals("test fields and values",toStringExpected,toStringActual);
-
+    System.out.println(stringTest);
 }
 
 }
