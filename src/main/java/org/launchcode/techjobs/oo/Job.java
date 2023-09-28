@@ -52,6 +52,27 @@ public class  Job {
     @Override
     public String toString() {
         String newLine = System.lineSeparator();
+        String dna = "Data not available";
+        if(name == null || name.isEmpty()){
+            name = dna;
+        }
+        if( employer == null || employer.getValue().equals("")){
+            employer.setValue(dna);
+        }
+        if(location == null || location.getValue() == ""){
+            location.setValue(dna);
+        }
+        if(positionType == null || positionType.getValue() == ""){
+            positionType.setValue(dna);
+        }
+
+            if(coreCompetency == null || coreCompetency.getValue()==""){
+
+              coreCompetency.setValue(dna);
+          }
+
+
+
         return   newLine +
                 "ID: " + getId() + newLine +
                 "Name: " + getName() + newLine +

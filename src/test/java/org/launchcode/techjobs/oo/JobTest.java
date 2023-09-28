@@ -100,7 +100,21 @@ public class JobTest {
         String toStringActual = String.valueOf(stringTest);
         assertEquals("test fields and values",toStringExpected,toStringActual);
     }
+@Test
+    public void testToStringHandlesEmptyField(){
+        String newLine = System.lineSeparator();
+    Job stringTest = new Job("", new Employer(""),new Location(""),new PositionType(""), new CoreCompetency(""));
+    String toStringExpected = newLine +
+            "ID: " + stringTest.getId() + newLine +
+            "Name: " + "Data not available" + newLine +
+            "Employer: " + "Data not available" + newLine +
+            "Location: " + "Data not available" + newLine +
+            "Position Type: " + "Data not available" + newLine +
+            "Core Competency: " + "Data not available" + newLine;
+    String toStringActual = String.valueOf(stringTest);
+    assertEquals("test fields and values",toStringExpected,toStringActual);
 
+}
 
 }
 
