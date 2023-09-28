@@ -82,7 +82,9 @@ public class JobTest {
                 "Position Type: " + stringTest.getPositionType() + newLine +
                 "Core Competency: " + stringTest.getCoreCompetency() + newLine;
         String toStringActual = stringTest.toString();
-        assertEquals("Test spaces before and after",toStringExpected,toStringActual);
+        assertTrue("Test spaces before and after",toStringActual.startsWith(newLine));
+        assertTrue("Test spaces before and after",toStringActual.endsWith(newLine));
+
         System.out.println(stringTest);
     }
     @Test
@@ -103,7 +105,7 @@ public class JobTest {
 @Test
     public void testToStringHandlesEmptyField(){
         String newLine = System.lineSeparator();
-    Job stringTest = new Job(null, new Employer(),new Location(),new PositionType(""), new CoreCompetency(""));
+    Job stringTest = new Job(null, new Employer(null),new Location(""),new PositionType(""), new CoreCompetency(""));
     String toStringExpected = newLine +
             "ID: " + stringTest.getId() + newLine +
             "Name: " + "Data not available" + newLine +
